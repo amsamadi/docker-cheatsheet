@@ -8,7 +8,7 @@
  
     docker image inspect [IMAGE] -f '{{ .DockerVersion }}'
     
-* Show exposed ports:
+* Show exposed ports
 
  Syntax:
   
@@ -81,6 +81,31 @@
   
     docker run -dit --name redis redis
     docker container inspect redis -f '{{ .Id }}' > myredis.cid
+---
+### 11- Run the container with the following specifications
+* CPU=0.5 Core
+* CPUS=0,2
+* RAM=512 MB
+* SWAP=256 MB  
+
+  Run:
   
+      docker run -d --name nginx --cpus 0.5 --cpuset-cpus 0,2 --memory 512m --memory-swap 768m nginx:1.20.0
+---
+### 12- Set environment variables for a docker container and show them in the output
+* For example set CLASS=dws and NAME=soran
+ 
+  Run:
+  
+      docker run -dit --name alpine -e CLASS=dws -e NAME=soran alpine
+      docker exec alpine printenv
+---
+### 13- Mount Volume to a container
+* For example mount /home/data in the host to the /data in the container and set it as a working directory
+
+  Run:
+  
+      docker run -dit --name alpine -v /home/data/:/data -w /data alpine
+---
 
      
