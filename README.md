@@ -43,7 +43,8 @@
   
     docker container top nginx
 ---
-### 5-
+### 5- What is docker proxy?
+* The docker-proxy operates in userland, and simply receives any packets arriving at the host's specified port, that the kernel hasn't 'dropped' or forwarded, and redirects them to the container's port
 ---
 ### 6- What is a dangling image? 
 
