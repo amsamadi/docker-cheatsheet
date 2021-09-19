@@ -122,14 +122,30 @@
 * ARG values are not available after the image is built. A running container won’t have access to an ARG variable value
 ---
 ### 16- What is the difference between CMD and ENTRYPOINT in dockerfile?
-* CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs. ENTRYPOINT command and parameters will not be overwritten from command line unless you add the --entrypoint flag. Instead, all command line arguments will be added after ENTRYPOINT parameters
+* CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs 
+* ENTRYPOINT command and parameters will not be overwritten from command line unless you add the --entrypoint flag. Instead, all command line arguments will be added after ENTRYPOINT parameters
 ---
 ### 17- What is the difference between expose and publish ports?
 * Exposing ports is a way of documenting which ports are used, but does not actually map or open any ports. Exposing ports is optional. You publish ports using the --publish or --publish-all flag to docker run . This tells Docker which ports to open on the container's network interface
 ---
 ### 18- What does it mean when we use the FROM in Dockerfile?
-* 
+* The FROM in dockerfile means the file system of that operating system(rootfs), not a complete operating system
+---
+### 19- What is the difference between RUN and ENTRYPOINT in dockerfile?
+* ENTRYPOINT command and parameters will not be overwritten from command line unless you add the --entrypoint flag. Instead, all command line arguments will be added after ENTRYPOINT parameters. this command is used when image is creating. 
 
+* RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer. For example if you wanted to install a package or create a directory inside of your Docker image then RUN will be what you'll want to use. this command is used when we want to start a container from that image.
+---
+### 20- What is the difference between ADD and COPY in dockerfile?
+* COPY and ADD are both Dockerfile instructions that serve similar purposes. They let you copy files from a specific location into a Docker image.
+
+* COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
+
+* ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination
+---
+### 21- What does it mean when we use VOLUME in dockerfile?
+* A volume is a persistent data stored in /var/lib/docker/volumes/...
+* You can declare it in a Dockerfile, which means each time a container is started from the image, the volume is created, even if you don't have any -v option
 
 ###### [@dwsclass](https://github.com/dwsclass)dws-ops-004-docker
 ###### [@dwsclass](https://github.com/dwsclass)dws-ops-005-docker
