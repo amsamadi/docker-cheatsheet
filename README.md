@@ -108,6 +108,29 @@
   
       docker run -dit --name alpine -v /home/data/:/data -w /data alpine
 ---
+### 14- What is Dockerfile
+* A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image
+---
+### 15- What is the difference between docker container commit and docker build command
+* The docker build command builds Docker images from a Dockerfile and a “context”. ... The build process can refer to any of the files in the context. For example, your build can use a COPY instruction to reference a file in the context
+
+* Docker's commit command allows users to take a running container and save its current state as an image
+---
+### 15- What is the difference between ENV and ARG in dockerfile?
+* ENV is mainly meant to provide default values for your future environment variables. Running dockerized applications can access environment variables. It’s a great way to pass configuration values to your project
+
+* ARG values are not available after the image is built. A running container won’t have access to an ARG variable value
+---
+### 16- What is the difference between CMD and ENTRYPOINT in dockerfile?
+* CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs. ENTRYPOINT command and parameters will not be overwritten from command line unless you add the --entrypoint flag. Instead, all command line arguments will be added after ENTRYPOINT parameters
+---
+### 17- What is the difference between expose and publish ports?
+* Exposing ports is a way of documenting which ports are used, but does not actually map or open any ports. Exposing ports is optional. You publish ports using the --publish or --publish-all flag to docker run . This tells Docker which ports to open on the container's network interface
+---
+### 18- What does it mean when we use the FROM in Dockerfile?
+* 
+
+
 ###### [@dwsclass](https://github.com/dwsclass)dws-ops-004-docker
 ###### [@dwsclass](https://github.com/dwsclass)dws-ops-005-docker
 
