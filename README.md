@@ -147,7 +147,5 @@
 * A volume is a persistent data stored in /var/lib/docker/volumes/...
 * You can declare it in a Dockerfile, which means each time a container is started from the image, the volume is created, even if you don't have any -v option
 
-###### [@dwsclass](https://github.com/dwsclass)dws-ops-004-docker
-###### [@dwsclass](https://github.com/dwsclass)dws-ops-005-docker
 
      
